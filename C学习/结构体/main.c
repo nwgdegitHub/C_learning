@@ -26,6 +26,13 @@
  4.1. 定义变量时初始化, 注意对应
  4.2. 指定属性，一一赋值
  
+ 
+ 5. 结构体和数组的区别？
+ 
+ 6. 结构体作用域也分全局和局部
+ 
+ 7. 结构体的存储细节
+ 
  */
 
 #include <stdio.h>
@@ -67,11 +74,17 @@ int main(int argc, const char * argv[]) {
     struct Person per3 = {.name = "盲僧", 12, 59.0};
     printf("per3 名字 = %s \n",per3.name);
     
+//数组不能先定义，再一次性初始化，但是结构体可以, 需要强制类型转换
+//    int arr[3];
+//    arr = {1,2,3};
     
     
-    
-    
-    
+    struct Animal{
+        char *name;
+        int age;
+    };
+    struct Animal ani;
+    ani = (struct Animal){"Dog", 5};
     
     return 0;
 }
